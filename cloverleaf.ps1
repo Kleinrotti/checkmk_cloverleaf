@@ -4,7 +4,8 @@ $CMK_VERSION = "2.0.0p9"
 ## Replace path in first variable with your cloverleaf location
 ## Replace 'production' in second variable with your site name
 $path = "c:\healthcomm\cloverleaf\cis20.1\integrator"
-$status = cmd /c "call $($path)\sbin/setroot $($path) production && hciconnstatus"
+$site = "production"
+$status = cmd /c "call $($path)\sbin/setroot $($path) $($site) && hciconnstatus"
 $regex = "\b(?:error|down)\b"
 
 #skip first two lines of output, because there is no interface information
